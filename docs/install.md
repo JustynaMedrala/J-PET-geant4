@@ -9,6 +9,16 @@
 * [cadmesh](https://github.com/christopherpoole/CADMesh)
 * doxygen
 
+## Environemt setup with CVMFS
+You can fulfill above prerequsities with CernVM File System. See [CVMFS](https://cvmfs.readthedocs.io/en/stable/cpt-quickstart.html) documenttion. An example setup script for Centos 7 OS:  
+`source setups/setup-env-cvmfs-centos7.sh`  
+Once you run this script you have compiled Geant4 and all depandancies!
+
+## Git submodule
+The CADMesh is being cloned by running the:
+`git submodule init`  
+`git submodule update`
+
 ## How to compile?
 `mkdir build`  
 `cd build`  
