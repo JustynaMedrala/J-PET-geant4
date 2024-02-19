@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################
-#       SETUP ENVIROMENT WITH CVMFS @ CENTORS7 #
+#       SETUP ENVIROMENT WITH CVMFS @ CENTOS 7 #
 ################################################
 
 # how-to-run:
