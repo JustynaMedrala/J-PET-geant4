@@ -1,4 +1,0 @@
-1: <error> File : 2024_02_13-12_58_02.mcGeant.root does not exist. [JPetOptionValidator.cpp:areFilesValid@201]
-2: <error> VALIDATION ERROR FOR file_std::vector<std::string> [JPetOptionValidator.cpp:areCorrectOptions@37]
-3: <error> Wrong user options provided! Check the log! [JPetManager.cpp:parseCmdLine@116]
-4: <error> While parsing command line arguments [JPetManager.cpp:run@46]

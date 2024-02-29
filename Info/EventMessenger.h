@@ -39,6 +39,7 @@ public:
   bool ShowProgress() { return fShowProgress; }
   G4int GetPowerPrintStat() { return fPrintPower; }
   bool AddDatetime() { return fOutputWithDatetime; }
+  G4int AddOwnName() {  return fOutputWithOwnName; }
   G4int GetMinRegMultiplicity() { return fMinRegisteredMultiplicity; }
   G4int GetMaxRegMultiplicity() { return fMaxRegisteredMultiplicity; }
   G4int GetExcludedMultiplicity() { return fExcludedMultiplicity; }
@@ -62,6 +63,7 @@ private:
   G4UIcmdWithABool* fPrintStat = nullptr;
   G4UIcmdWithABool* fPrintStatBar = nullptr;
   G4UIcmdWithABool* fAddDatetime = nullptr;
+  G4UIcmdWithAnInteger* fAddOwnName = nullptr;
   G4UIcmdWithABool* fCMDKillEventsEscapingWorld = nullptr;
   G4UIcmdWithAnInteger* fPrintStatPower = nullptr;
   G4UIcmdWithAnInteger* fCMDMinRegMulti = nullptr;
@@ -80,6 +82,7 @@ private:
   G4int fPrintPower = 10;
   bool fShowProgress = false;
   bool fOutputWithDatetime = false;
+  G4int fOutputWithOwnName = 0;
   bool fKillEventsEscapingWorld = false;
   G4int fMinRegisteredMultiplicity = 0;
   G4int fMaxRegisteredMultiplicity = 10;

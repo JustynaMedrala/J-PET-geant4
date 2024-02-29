@@ -119,6 +119,8 @@ void HistoManager::Book()
       + a_hour + "_" + a_minute + "_" + a_second;
     fileName = dateTime + "." + fileName;
   }
+  if(fEvtMessenger->AddOwnName()) {
+     fileName = G4UIcommand::ConvertToString(fEvtMessenger->AddOwnName())+"_"+fileName;}
 
   fRootFile = new TFile(fileName, "RECREATE");
   if (!fRootFile) {

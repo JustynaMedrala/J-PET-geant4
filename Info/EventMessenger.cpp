@@ -61,6 +61,9 @@ EventMessenger::EventMessenger()
   fAddDatetime = new G4UIcmdWithABool("/jpetmc/output/AddDatetime", this);
   fAddDatetime->SetGuidance("Adds to the output file name date and time of simulation start.");
 
+  fAddOwnName = new G4UIcmdWithAnInteger("/jpetmc/output/AddOwnName", this);
+  fAddOwnName->SetGuidance("Adds to the output file own name.");
+
   fSetSeed = new G4UIcmdWithAnInteger("/jpetmc/SetSeed", this);
   fSetSeed->SetGuidance("Use specific seed. If 0 provided seed will be random.");
   fSetSeed->SetDefaultValue(0);
@@ -120,6 +123,8 @@ void EventMessenger::SetNewValue(G4UIcommand* command, G4String newValue)
     fShowProgress = fPrintStatBar->GetNewBoolValue(newValue);
   } else if (command == fAddDatetime) {
     fOutputWithDatetime = fAddDatetime->GetNewBoolValue(newValue);
+  } else if (command == fAddOwnName) {
+    fOutputWithOwnName = fAddOwnName->GetNewIntValue(newValue);
   } else if (command == fCMDKillEventsEscapingWorld) {
     fKillEventsEscapingWorld = fCMDKillEventsEscapingWorld->GetNewBoolValue(newValue);
   } else if (command == fCMDExcludedMulti) {
