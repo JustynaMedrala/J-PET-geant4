@@ -91,19 +91,23 @@ void EventAction::WriteToFile(const G4Event* anEvent)
   if (HCE) {
     DHC = dynamic_cast<DetectorHitsCollection*>(HCE->GetHC(fScinCollID));
     int n_hit = DHC->entries();
-    for (int i = 0; i < n_hit; i++) {
-      DetectorHit* dh = dynamic_cast<DetectorHit*>(DHC->GetHit(i));
+    if(n_hit != 0){ 
+      for (int i = 0; i < n_hit; i++) {
+        DetectorHit* dh = dynamic_cast<DetectorHit*>(DHC->GetHit(i));
      
-      // Forcefully cut the remnants from the cut on photon durinng first interaction----     
-      double EnergyDeposit = dh->GetEdep();
-      // Removing remnants from the energy deposition cut on prim photon
-      if (EnergyDeposit < .511 - fEvtMessenger->GetEnergyCut() && fEvtMessenger->GetEnergyCutFlag()) continue;
+        // Forcefully cut the remnants from the cut on photon durinng first interaction----     
+        double EnergyDeposit = dh->GetEdep();
+        // Removing remnants from the energy deposition cut on prim photon
+        if (EnergyDeposit < .511 - fEvtMessenger->GetEnergyCut() && fEvtMessenger->GetEnergyCutFlag()) continue;
      
-      fHistoManager->AddNewHit(dh);
-    }
+        //fHistoManager->AddNewHit(dh);
+      }
+   //! save to output file
+   fHistoManager->SaveEvtPack();
+   }
   }
 
-  //! save to output file
+  ////! save to output file
   fHistoManager->SaveEvtPack();
 }
 

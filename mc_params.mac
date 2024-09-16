@@ -1,0 +1,17 @@
+
+# Geometry for run 7
+/jpetmc/detector/loadTargetForRun 7
+
+# Loading standard scintillators (3 layers)
+/jpetmc/detector/loadJPetBasicGeom
+
+# Loading scintillators without frame
+/jpetmc/detector/loadOnlyScintillators
+
+#testing seed
+#/jpetmc/set Seed 100
+/jpetmc/output/AddDatetime true
+/jpetmc/output/AddOwnName 30
+/run/initialize
+#/jpetmc/material/reloadMaterials xad4
+/run/beamOn 1000000

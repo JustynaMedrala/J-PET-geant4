@@ -117,6 +117,10 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
   {
     ConstructTargetRun7();
   }
+  else if (fRunNumber == 11)
+  {
+    ConstructTargetRun7();
+  }
   else if (fRunNumber == 12)
   {
     ConstructTargetRun12();
@@ -156,7 +160,7 @@ void DetectorConstruction::ConstructSDandField()
 void DetectorConstruction::LoadGeometryForRun(G4int nr)
 {
   fRunNumber = nr;
-  if (fRunNumber != 3 && fRunNumber != 5 && fRunNumber != 6 && fRunNumber != 7 && fRunNumber != 12 && fRunNumber != 0)
+  if (fRunNumber != 3 && fRunNumber != 5 && fRunNumber != 6 && fRunNumber != 7 && fRunNumber != 11 && fRunNumber != 12 && fRunNumber != 0)
   {
     G4Exception("DetectorConstruction", "DC02", FatalException, "This run setup is not implemented ");
   }
